@@ -37,7 +37,7 @@ if (strcmp(argv[1], "spotify") == 0) {
         argv[1][len - 2] == 'e' &&
         argv[1][len - 1] == 'b') {
         char *buffer = malloc(
-            strlen("sudo apt install") +
+            strlen("sudo apt install ") +
             strlen(argv[1]) +
             1
             );
@@ -53,5 +53,35 @@ if (strcmp(argv[1], "spotify") == 0) {
         free(buffer);
     }
 
+    size_t len = strlen(argv[1]);
+    if (len >= 9 &&
+        argv[1][len - 9] == '.' &&
+        argv[1][len - 8] == 'A' &&
+        argv[1][len - 7] == 'p' &&
+        argv[1][len - 6] == 'p' &&
+        argv[1][len - 5] == 'I' &&
+        argv[1][len - 4] == 'm' &&
+        argv[1][len - 3] == 'a' &&
+        argv[1][len - 2] == 'g' &&
+        argv[1][len - 1] == 'e') {
+        char buffer[256];
+        snprintf(buffer, sizeof(buffer), "sudo chmod +x %s", argv[1]);
+        system(buffer);
+
+    }
+
+
+    size_t len = strlen(argv[1]);
+    if (len > = 7 &&
+        argv[1][len - 7] == '.' &&
+        argv[1][len - 6] == 't' &&
+        argv[1][len - 5] == 'a' &&
+        argv[1][len - 4] == 'r' &&
+        argv[1][len - 3] == '.' &&
+        argv[1][len - 2] == 'g' &&
+        argv[1][len - 1] == 'z') {
+        char buffer[256];
+        snprintf(buffer, "")
+    }
     return 0;
 }
